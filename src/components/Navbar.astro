@@ -9,15 +9,12 @@ const isActive = (href: string) => currentPath === href;
 <nav class="bg-primary shadow-md sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-primary/90">
   <div class="max-w-7xl mx-auto px-4 md:px-6">
 
-    <!-- GRID PRINCIPAL -->
     <div class="grid grid-cols-2 md:grid-cols-3 items-center py-4">
 
-      <!-- LOGO -->
       <a href="/" class="text-white font-bold text-lg justify-self-start">
         ODS 13
       </a>
 
-      <!-- LINKS DESKTOP (CENTRO REAL) -->
       <div class="hidden md:flex justify-center gap-6 text-sm font-medium">
         {
           navItems.map((navItem) => (
@@ -37,18 +34,15 @@ const isActive = (href: string) => currentPath === href;
         }
       </div>
 
-      <!-- AUTH DESKTOP -->
       <div class="hidden md:flex justify-self-end items-center">
         <AuthButton client:load />
       </div>
 
-      <!-- HAMBURGUESA MOBILE -->
       <details class="md:hidden justify-self-end relative">
         <summary class="list-none cursor-pointer text-white text-3xl select-none">
           ☰
         </summary>
 
-        <!-- PANEL MOBILE -->
         <div class="absolute right-0 mt-4 w-64 bg-primary-dark rounded-xl shadow-2xl p-4 animate-slide">
           <ul class="flex flex-col gap-3 text-sm font-medium">
 
@@ -71,7 +65,6 @@ const isActive = (href: string) => currentPath === href;
               ))
             }
 
-            <!-- AUTH MOBILE -->
             <li class="pt-3 border-t border-white/20">
               <AuthButton client:load />
             </li>
