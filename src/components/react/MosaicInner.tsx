@@ -19,7 +19,7 @@ export default function MosaicoInner() {
 
   useEffect(() => {
     loadPosts();
-  }, []);
+  }, [user, loading]);
 
   if (loading) {
     return (
