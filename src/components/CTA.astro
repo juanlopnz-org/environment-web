@@ -1,0 +1,38 @@
+---
+import Button from "./Button.astro";
+import Container from "./Container.astro";
+
+interface Props {
+  title: string;
+  text: string;
+  buttonText: string;
+  href: string;
+  bg?: string;
+}
+
+const {
+  title,
+  text,
+  buttonText,
+  href,
+  bg = "bg-primary"
+} = Astro.props;
+---
+
+<section class={`${bg} text-white text-center`}>
+  <Container size="sm" paddingY="py-20" centered={true}>
+
+    <h2 class="text-3xl md:text-4xl font-bold mb-4">
+      {title}
+    </h2>
+
+    <p class="mb-8 text-lg md:text-xl opacity-95">
+      {text}
+    </p>
+
+    <Button href={href}>
+      {buttonText}
+    </Button>
+
+  </Container>
+</section>

@@ -1,93 +1,42 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import Section from "../components/Section.astro";
+import Card from "../components/Card.astro";
+import CTA from "../components/CTA.astro";
 ---
 
-<Layout 
-  title="ODS 13 - Acción por el Clima"
-  description="Adoptar medidas urgentes para combatir el cambio climático y sus efectos. Proyecto académico sobre el ODS 13."
->
+<Layout title="ODS 13 - Acción por el Clima">
 
-  <section class="min-h-screen flex flex-col justify-center items-center text-center px-6 bg-gradient-to-br from-green-700 to-blue-900 text-white">
-    <h1 class="text-5xl md:text-6xl font-bold mb-6">
-      ODS 13: Acción por el Clima
-    </h1>
+<Hero
+  title="ODS 13: Acción por el Clima"
+  subtitle="Adoptar medidas urgentes para combatir el cambio climático y sus efectos, promoviendo un futuro sostenible."
+  image="https://www.un.org/sustainabledevelopment/es/wp-content/uploads/sites/3/2018/07/S_SDG-goals_icons-individual-rgb-13.png"
+  buttonText="Conoce más"
+  buttonHref="/about"
+/>
 
-    <p class="max-w-2xl text-lg md:text-xl opacity-90 mb-8">
-      Adoptar medidas urgentes para combatir el cambio climático y sus efectos.
-    </p>
+<Section title="¿Por qué es urgente actuar?" bg="bg-primary-light">
+  <div class="grid md:grid-cols-3 gap-8">
+    <Card title="🌡️ Calentamiento Global">
+      <p>El aumento de la temperatura global impacta ecosistemas y salud humana.</p>
+    </Card>
 
-    <a 
-      href="/about"
-      class="bg-white text-green-700 px-6 py-3 rounded-full font-semibold hover:scale-105 transition"
-    >
-      Conoce más
-    </a>
-  </section>
+    <Card title="🌊 Deshielo">
+      <p>El derretimiento de los polos aumenta el nivel del mar.</p>
+    </Card>
 
-  <section class="py-20 px-6 bg-white">
-    <div class="max-w-5xl mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-8 text-green-700">
-        ¿Por qué es urgente actuar?
-      </h2>
+    <Card title="🔥 Eventos extremos">
+      <p>Sequías, incendios e inundaciones son cada vez más frecuentes.</p>
+    </Card>
+  </div>
+</Section>
 
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="p-6 shadow-md rounded-xl">
-          <h3 class="text-2xl font-bold mb-4">🌡️ Calentamiento Global</h3>
-          <p>
-            El aumento de la temperatura global genera impactos directos
-            en ecosistemas, agricultura y salud humana.
-          </p>
-        </div>
+<CTA
+  title="El momento de actuar es ahora"
+  text="Cada pequeña acción contribuye a un futuro sostenible."
+  buttonText="Aprende más"
+  href="/about"
+/>
 
-        <div class="p-6 shadow-md rounded-xl">
-          <h3 class="text-2xl font-bold mb-4">🌊 Deshielo</h3>
-          <p>
-            El derretimiento de los polos provoca el aumento del nivel
-            del mar y amenaza comunidades costeras.
-          </p>
-        </div>
-
-        <div class="p-6 shadow-md rounded-xl">
-          <h3 class="text-2xl font-bold mb-4">🔥 Eventos Extremos</h3>
-          <p>
-            Incendios, sequías e inundaciones son cada vez más frecuentes
-            debido al cambio climático.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="py-20 px-6 bg-green-700 text-white text-center">
-    <div class="max-w-4xl mx-auto">
-      <h2 class="text-3xl font-bold mb-8">
-        ¿Qué podemos hacer?
-      </h2>
-
-      <ul class="space-y-4 text-lg">
-        <li>✔ Reducir el consumo de energía.</li>
-        <li>✔ Utilizar transporte sostenible.</li>
-        <li>✔ Apoyar energías renovables.</li>
-        <li>✔ Reducir, reutilizar y reciclar.</li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="py-20 px-6 bg-blue-900 text-white text-center">
-    <h2 class="text-3xl font-bold mb-6">
-      El momento de actuar es ahora
-    </h2>
-
-    <p class="mb-6 max-w-2xl mx-auto">
-      Cada pequeña acción contribuye a un futuro más sostenible.
-      El cambio climático es un desafío global que requiere compromiso colectivo.
-    </p>
-
-    <a 
-      href="/about"
-      class="bg-white text-blue-900 px-6 py-3 rounded-full font-semibold hover:scale-105 transition"
-    >
-      Aprende más sobre el problema
-    </a>
-  </section>
 </Layout>
