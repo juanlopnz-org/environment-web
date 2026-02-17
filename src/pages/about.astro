@@ -1,6 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Hero from "../components/Hero.astro";
 import Section from "../components/Section.astro";
 import Card from "../components/Card.astro";
 import CTA from "../components/CTA.astro";
@@ -11,13 +10,6 @@ import CTA from "../components/CTA.astro";
   description="La contaminación ambiental y su relación con el cambio climático y el ODS 13."
 >
 
-<!-- HERO -->
-<Hero
-  title="Contaminación Ambiental"
-  subtitle="Uno de los mayores desafíos actuales, afectando el equilibrio natural del planeta y acelerando el cambio climático."
-/>
-
-<!-- INFORMACIÓN -->
 <Section bg="bg-white" centered={false}>
   <div class="space-y-10 max-w-5xl mx-auto">
 
@@ -50,12 +42,11 @@ import CTA from "../components/CTA.astro";
   </div>
 </Section>
 
-<!-- CTA -->
 <CTA
   title="El cambio empieza con información"
   text="Comprender el problema es el primer paso para tomar decisiones responsables y sostenibles."
   buttonText="Ver causas principales"
-  href="/causas"
+  href="/causes"
 />
 
 </Layout>

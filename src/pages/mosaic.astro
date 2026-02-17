@@ -1,0 +1,23 @@
+---
+import Layout from "../layouts/Layout.astro";
+import MosaicoInner from "src/components/react/MosaicInner";
+---
+
+<Layout title="Mosaico ambiental">
+
+<section class="py-20 bg-primary-light text-center">
+  <h1 class="text-4xl font-bold text-primary mb-6">
+    Mosaico Ambiental
+  </h1>
+
+  <p class="max-w-2xl mx-auto text-lg">
+    Comparte fotografías relacionadas con el cuidado del medio ambiente
+    y observa las aportaciones de otras personas.
+  </p>
+</section>
+
+<section class="py-16">
+  <MosaicoInner client:load />
+</section>
+
+</Layout>

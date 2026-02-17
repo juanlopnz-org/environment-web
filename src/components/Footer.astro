@@ -1,0 +1,116 @@
+---
+import { navItems } from "src/utils/constans";
+import Container from "./Container.astro";
+
+const year = new Date().getFullYear();
+
+const references = [
+  {
+    name: "Naciones Unidas — ODS 13",
+    href: "https://www.un.org/sustainabledevelopment/es/climate-action/",
+  },
+  {
+    name: "IPCC (Panel Intergubernamental sobre Cambio Climático)",
+    href: "https://www.ipcc.ch/",
+  },
+];
+
+const authorInfo = 
+  {
+    name: "Juan Carlos López Ramírez",
+    role: "Ingeniero de Software",
+    description: "Proyecto académico universitario",
+    contact: {
+      type: "email",
+      value: "jucalora17@gmail.com",
+    },
+  }
+---
+
+<footer class="bg-primary-dark text-white mt-20 border-t border-white/10">
+  <Container size="xl" paddingY="py-14">
+    <div class="grid gap-10 text-sm sm:grid-cols-2 lg:grid-cols-4">
+      <div>
+        <h3 class="text-lg font-semibold mb-3">ODS 13: Acción por el Clima</h3>
+
+        <p class="text-white/80 leading-relaxed">
+          Sitio web informativo desarrollado con fines educativos para promover
+          la concientización sobre el cambio climático y la importancia de la
+          sostenibilidad ambiental.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="text-lg font-semibold mb-3">Navegación</h3>
+
+        <ul class="space-y-2 text-white/80">
+          {
+            navItems.map((item) => {
+              return (
+                <li>
+                  <a
+                    href={item.href}
+                    class="hover:text-white transition"
+                  >
+                    {item.name}
+                  </a>
+                </li>
+              );
+            })
+          }
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-lg font-semibold mb-3">Fuentes y referencias</h3>
+
+        <ul class="space-y-2 text-white/80">
+          {
+            references.map((ref) => {
+              return (
+                <li>
+                  <a
+                    href={ref.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="hover:text-white underline"
+                  >
+                    {ref.name}
+                  </a>
+                </li>
+              );
+            })
+          }
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-lg font-semibold mb-3">Autor del proyecto</h3>
+
+        <ul class="space-y-2 text-white/80 leading-relaxed">
+          <li><strong>{authorInfo.name}</strong></li>
+          <li>{authorInfo.role}</li>
+          <li>{authorInfo.description}</li>
+          <li class="pt-2">
+            Contacto:
+            <a
+              href={`mailto:${authorInfo.contact.value}`}
+              class="hover:text-white underline"
+            >
+              {authorInfo.contact.value}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </Container>
+
+  <div class="border-t border-white/20">
+    <Container size="xl" paddingY="py-4" centered={true}>
+      <p class="text-white/70 text-xs">
+        © {year} Juan Carlos López Ramírez — Proyecto académico sobre el ODS 13 —
+        Acción por el Clima.
+      </p>
+    </Container>
+  </div>
+</footer>
