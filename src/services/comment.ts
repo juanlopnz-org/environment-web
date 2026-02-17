@@ -21,7 +21,15 @@ export async function addComment(postId: string, content: string, userId: string
 export async function getComments(postId: string) {
   const { data } = await supabase
     .from("comments")
-    .select("*")
+    .select(`
+      id,
+      content,
+      created_at,
+      profiles (
+        full_name,
+        avatar_url
+      )
+    `)
     .eq("post_id", postId)
     .order("created_at", { ascending: true });
 
