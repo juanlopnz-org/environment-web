@@ -17,7 +17,6 @@ const { title, subtitle, image, buttonText, buttonHref } = Astro.props;
   <Container size="xl" paddingY="py-24">
     <div class="w-full flex flex-col md:flex-row items-center gap-12">
 
-      <!-- Texto -->
       <div class="flex-1 text-center md:text-left">
         <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
           {title}
@@ -34,7 +33,6 @@ const { title, subtitle, image, buttonText, buttonHref } = Astro.props;
         )}
       </div>
 
-      <!-- Imagen -->
       {image && (
         <div class="flex-1 flex justify-center">
           <img
