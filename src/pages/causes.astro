@@ -1,0 +1,68 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Section from "../components/Section.astro";
+import Card from "../components/Card.astro";
+import CTA from "../components/CTA.astro";
+---
+
+<Layout
+  title="Causas del Cambio Climático"
+  description="Principales causas del cambio climático y su impacto ambiental dentro del ODS 13."
+>
+  <Section title="Principales causas" bg="bg-primary-light">
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <Card title="🏭 Emisiones industriales">
+        <p>
+          Las fábricas y plantas de producción liberan grandes cantidades de
+          dióxido de carbono (CO₂) y otros gases de efecto invernadero
+          provenientes de la quema de combustibles fósiles.
+        </p>
+      </Card>
+
+      <Card title="🚗 Transporte">
+        <p>
+          El uso masivo de vehículos a gasolina y diésel genera emisiones
+          contaminantes que se acumulan en la atmósfera y contribuyen
+          directamente al calentamiento global.
+        </p>
+      </Card>
+
+      <Card title="🌳 Deforestación">
+        <p>
+          La tala de bosques reduce la capacidad natural del planeta para
+          absorber CO₂, aumentando la concentración de gases de efecto
+          invernadero en el aire.
+        </p>
+      </Card>
+
+      <Card title="⚡ Producción de energía">
+        <p>
+          Gran parte de la electricidad mundial aún se genera mediante carbón,
+          petróleo y gas natural, lo que libera enormes cantidades de emisiones
+          contaminantes.
+        </p>
+      </Card>
+
+      <Card title="🗑️ Manejo inadecuado de residuos">
+        <p>
+          Los vertederos producen metano, un gas de efecto invernadero mucho más
+          potente que el dióxido de carbono.
+        </p>
+      </Card>
+
+      <Card title="🐄 Ganadería intensiva">
+        <p>
+          La producción ganadera libera metano a la atmósfera, contribuyendo
+          significativamente al aumento de la temperatura global.
+        </p>
+      </Card>
+    </div>
+  </Section>
+
+  <CTA
+    title="Conocer las causas permite prevenir"
+    text="Entender el origen del problema es el primer paso para encontrar soluciones sostenibles."
+    buttonText="Ver consecuencias"
+    href="/consequences"
+  />
+</Layout>

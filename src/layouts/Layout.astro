@@ -1,5 +1,6 @@
 ---
-import Navbar from '../components/Navbar.astro';
+import Footer from "src/components/Footer.astro";
+import Navbar from "../components/Navbar.astro";
 
 interface Props {
 	title: string;
@@ -8,7 +9,7 @@ interface Props {
 
 const {
 	title,
-	description = "ODS 13: Acción por el Clima. Medidas urgentes para combatir el cambio climático y sus efectos."
+	description = "ODS 13: Acción por el Clima. Medidas urgentes para combatir el cambio climático y sus efectos.",
 } = Astro.props;
 ---
 
@@ -34,5 +35,6 @@ const {
 		<main>
 			<slot />
 		</main>
+		<Footer />
 	</body>
 </html>

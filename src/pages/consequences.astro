@@ -1,0 +1,64 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Section from "../components/Section.astro";
+import Card from "../components/Card.astro";
+import CTA from "../components/CTA.astro";
+---
+
+<Layout
+  title="Consecuencias del Cambio Climático"
+  description="Efectos del cambio climático sobre el planeta, la biodiversidad y la humanidad."
+>
+  <Section title="Principales efectos en el planeta" bg="bg-primary-light">
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <Card title="🌡️ Aumento de la temperatura global">
+        <p>
+          La temperatura media del planeta continúa aumentando, generando olas
+          de calor más intensas y frecuentes.
+        </p>
+      </Card>
+
+      <Card title="🧊 Derretimiento de glaciares">
+        <p>
+          Los polos y glaciares se están derritiendo aceleradamente,
+          contribuyendo al aumento del nivel del mar.
+        </p>
+      </Card>
+
+      <Card title="🌊 Inundaciones">
+        <p>
+          El aumento del nivel del mar provoca inundaciones en ciudades costeras
+          y pone en riesgo a millones de personas.
+        </p>
+      </Card>
+
+      <Card title="🔥 Incendios forestales">
+        <p>
+          Las altas temperaturas y sequías prolongadas favorecen la aparición de
+          incendios forestales más destructivos.
+        </p>
+      </Card>
+
+      <Card title="🌾 Impacto en la agricultura">
+        <p>
+          Cambios en las lluvias y temperaturas reducen la producción de
+          alimentos y afectan la seguridad alimentaria mundial.
+        </p>
+      </Card>
+
+      <Card title="🐾 Pérdida de biodiversidad">
+        <p>
+          Muchas especies animales y vegetales no logran adaptarse a los cambios
+          climáticos, aumentando el riesgo de extinción.
+        </p>
+      </Card>
+    </div>
+  </Section>
+
+  <CTA
+    title="Aún estamos a tiempo de actuar"
+    text="Las acciones individuales y colectivas pueden reducir los efectos del cambio climático."
+    buttonText="Volver al inicio"
+    href="/"
+  />
+</Layout>

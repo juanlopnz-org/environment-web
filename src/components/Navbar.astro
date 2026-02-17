@@ -1,38 +1,85 @@
 ---
+import { navItems } from "src/utils/constans";
+import AuthButton from "./react/AuthButton";
+
 const currentPath = Astro.url.pathname;
-
-const navItems = [
-  { name: "Inicio", href: "/" },
-  { name: "Definición", href: "/about" },
-  { name: "Causas", href: "/causas" },
-  { name: "Consecuencias", href: "/consecuencias" },
-  { name: "Mosaico", href: "/mosaico" },
-];
-
-const isActive = (href: string) => {
-  return currentPath === href;
-};
+const isActive = (href: string) => currentPath === href;
 ---
 
-<nav class="bg-primary shadow-md sticky top-0 z-50">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="flex flex-wrap justify-center gap-3 py-4 text-sm font-medium">
-      {
-        navItems.map((navItem) => (
-          <a
-            href={navItem.href}
-            aria-current={isActive(navItem.href) ? "page" : undefined}
-            class={`nav-link relative px-2 py-1 transition-colors duration-300
-            ${
-              isActive(navItem.href)
-                ? "text-white font-semibold"
-                : "text-white/80 hover:text-white"
-            }`}
-          >
-            {navItem.name}
-          </a>
-        ))
-      }
+<nav class="bg-primary shadow-md sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-primary/90">
+  <div class="max-w-7xl mx-auto px-4 md:px-6">
+
+    <!-- GRID PRINCIPAL -->
+    <div class="grid grid-cols-2 md:grid-cols-3 items-center py-4">
+
+      <!-- LOGO -->
+      <a href="/" class="text-white font-bold text-lg justify-self-start">
+        ODS 13
+      </a>
+
+      <!-- LINKS DESKTOP (CENTRO REAL) -->
+      <div class="hidden md:flex justify-center gap-6 text-sm font-medium">
+        {
+          navItems.map((navItem) => (
+            <a
+              href={navItem.href}
+              aria-current={isActive(navItem.href) ? "page" : undefined}
+              class={`nav-link relative px-2 py-1 transition-colors duration-300
+              ${
+                isActive(navItem.href)
+                  ? "text-white font-semibold"
+                  : "text-white/80 hover:text-white"
+              }`}
+            >
+              {navItem.name}
+            </a>
+          ))
+        }
+      </div>
+
+      <!-- AUTH DESKTOP -->
+      <div class="hidden md:flex justify-self-end items-center">
+        <AuthButton client:load />
+      </div>
+
+      <!-- HAMBURGUESA MOBILE -->
+      <details class="md:hidden justify-self-end relative">
+        <summary class="list-none cursor-pointer text-white text-3xl select-none">
+          ☰
+        </summary>
+
+        <!-- PANEL MOBILE -->
+        <div class="absolute right-0 mt-4 w-64 bg-primary-dark rounded-xl shadow-2xl p-4 animate-slide">
+          <ul class="flex flex-col gap-3 text-sm font-medium">
+
+            {
+              navItems.map((navItem) => (
+                <li>
+                  <a
+                    href={navItem.href}
+                    aria-current={isActive(navItem.href) ? "page" : undefined}
+                    class={`block px-3 py-2 rounded-lg transition
+                    ${
+                      isActive(navItem.href)
+                        ? "bg-white text-primary font-semibold"
+                        : "text-white/90 hover:bg-white/10"
+                    }`}
+                  >
+                    {navItem.name}
+                  </a>
+                </li>
+              ))
+            }
+
+            <!-- AUTH MOBILE -->
+            <li class="pt-3 border-t border-white/20">
+              <AuthButton client:load />
+            </li>
+
+          </ul>
+        </div>
+      </details>
+
     </div>
   </div>
 </nav>
@@ -58,5 +105,24 @@ const isActive = (href: string) => {
 
   .nav-link[aria-current="page"]::after {
     transform: scaleX(1);
+  }
+
+  .animate-slide {
+    animation: slideDown 0.2s ease;
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-8px) scale(0.98);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
   }
 </style>
