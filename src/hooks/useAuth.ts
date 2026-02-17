@@ -2,22 +2,16 @@ import { useEffect, useState } from "react";
 import { getAuthState, subscribe, type AuthState } from "src/config/authStore";
 
 export function useAuth() {
-
-  const [state, setState] = useState<AuthState>({
-    user: null,
-    session: null,
-    loading: true,
-  });
+  const [state, setState] = useState<AuthState>(() => getAuthState());
 
   useEffect(() => {
-    setState(prev => ({ ...prev, mounted: true }));
+    setState(getAuthState());
 
-    return subscribe(() => {
-      setState({
-        ...getAuthState(),
-      });
+    const unsub = subscribe(() => {
+      setState({ ...getAuthState() });
     });
 
+    return unsub;
   }, []);
 
   return state;
