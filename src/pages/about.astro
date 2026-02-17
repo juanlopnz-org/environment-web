@@ -1,8 +1,61 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import Section from "../components/Section.astro";
+import Card from "../components/Card.astro";
+import CTA from "../components/CTA.astro";
 ---
-<Layout title="Este es el about">
-    <h1>Contaminacion</h1>
-    
-    <p>Se entiende por contaminación ambiental cuando existe la presencia de sustancias nocivas en el agua, aire o suelo. Las sustancias nocivas son lo que llamamos contaminantes ambientales, pudiendo tener diferente origen. Además, se encuentran en diferentes concentraciones y en diferentes lugares.</p>
+
+<Layout 
+  title="¿Qué es la contaminación ambiental?"
+  description="La contaminación ambiental y su relación con el cambio climático y el ODS 13."
+>
+
+<!-- HERO -->
+<Hero
+  title="Contaminación Ambiental"
+  subtitle="Uno de los mayores desafíos actuales, afectando el equilibrio natural del planeta y acelerando el cambio climático."
+/>
+
+<!-- INFORMACIÓN -->
+<Section bg="bg-white" centered={false}>
+  <div class="space-y-10 max-w-5xl mx-auto">
+
+    <Card title="¿Qué es la contaminación?">
+      <p class="text-lg leading-relaxed">
+        Ocurre cuando sustancias nocivas se introducen en el aire, el agua o el
+        suelo, alterando su equilibrio natural y afectando la salud humana,
+        los ecosistemas y el clima del planeta.
+      </p>
+    </Card>
+
+    <Card title="Principales causas">
+      <p class="text-lg leading-relaxed">
+        Proviene principalmente de actividades industriales, transporte,
+        quema de combustibles fósiles y malas prácticas en el manejo
+        de residuos.
+      </p>
+    </Card>
+
+    <Card title="Relación con el ODS 13">
+      <p class="text-lg leading-relaxed">
+        La contaminación incrementa los gases de efecto invernadero,
+        intensificando fenómenos como el calentamiento global, sequías,
+        inundaciones y eventos climáticos extremos.
+        Actuar frente a este problema es clave para cumplir el
+        <span class="font-semibold text-primary">ODS 13: Acción por el Clima</span>.
+      </p>
+    </Card>
+
+  </div>
+</Section>
+
+<!-- CTA -->
+<CTA
+  title="El cambio empieza con información"
+  text="Comprender el problema es el primer paso para tomar decisiones responsables y sostenibles."
+  buttonText="Ver causas principales"
+  href="/causas"
+/>
+
 </Layout>

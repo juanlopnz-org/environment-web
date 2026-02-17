@@ -1,0 +1,27 @@
+---
+interface Props {
+  size?: "sm" | "md" | "lg" | "xl" | "full";
+  paddingY?: string;
+  centered?: boolean;
+}
+
+const {
+  size = "lg",
+  paddingY = "py-20",
+  centered = false
+} = Astro.props;
+
+const sizes = {
+  sm: "max-w-3xl",
+  md: "max-w-5xl",
+  lg: "max-w-6xl",
+  xl: "max-w-7xl",
+  full: "max-w-full"
+};
+---
+
+<section class={`${paddingY} px-6`}>
+  <div class={`${sizes[size]} mx-auto ${centered ? "text-center" : ""}`}>
+    <slot />
+  </div>
+</section>

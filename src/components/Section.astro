@@ -1,0 +1,25 @@
+---
+import Container from "./Container.astro";
+
+interface Props {
+  title?: string;
+  bg?: string;
+  centered?: boolean;
+}
+
+const { title, bg = "bg-white", centered = true } = Astro.props;
+---
+
+<section class={bg}>
+  <Container centered={centered}>
+    
+    {title && (
+      <h2 class="text-3xl font-bold mb-8 text-primary">
+        {title}
+      </h2>
+    )}
+
+    <slot />
+
+  </Container>
+</section>

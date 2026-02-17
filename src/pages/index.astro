@@ -1,10 +1,42 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import Section from "../components/Section.astro";
+import Card from "../components/Card.astro";
+import CTA from "../components/CTA.astro";
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="ODS 13 - Acción por el Clima">
+
+<Hero
+  title="ODS 13: Acción por el Clima"
+  subtitle="Adoptar medidas urgentes para combatir el cambio climático y sus efectos, promoviendo un futuro sostenible."
+  image="https://www.un.org/sustainabledevelopment/es/wp-content/uploads/sites/3/2018/07/S_SDG-goals_icons-individual-rgb-13.png"
+  buttonText="Conoce más"
+  buttonHref="/about"
+/>
+
+<Section title="¿Por qué es urgente actuar?" bg="bg-primary-light">
+  <div class="grid md:grid-cols-3 gap-8">
+    <Card title="🌡️ Calentamiento Global">
+      <p>El aumento de la temperatura global impacta ecosistemas y salud humana.</p>
+    </Card>
+
+    <Card title="🌊 Deshielo">
+      <p>El derretimiento de los polos aumenta el nivel del mar.</p>
+    </Card>
+
+    <Card title="🔥 Eventos extremos">
+      <p>Sequías, incendios e inundaciones son cada vez más frecuentes.</p>
+    </Card>
+  </div>
+</Section>
+
+<CTA
+  title="El momento de actuar es ahora"
+  text="Cada pequeña acción contribuye a un futuro sostenible."
+  buttonText="Aprende más"
+  href="/about"
+/>
 
 </Layout>
-
-<style>
-</style>
